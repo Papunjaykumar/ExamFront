@@ -1,1 +1,17 @@
-<!-- <h1>This is navabar</h1> -->
+<mat-toolbar color="primary">
+    <a routerLink="/" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu_book</mat-icon>
+    </a>
+    <span>Examportal</span>
+    <span class="example-spacer"></span>
+    <a [routerLink]="'/login'" mat-icon-button class="mr10" aria-label="Example icon-button with heart icon">
+      login
+    </a>
+    <a [routerLink]="'/signup'" mat-icon-button class="ml10 mr10"aria-label="Example icon-button with share icon">
+      register
+    </a>
+    <button mat-icon-button aria-label="Example icon-button with share icon">
+        
+    </button>
+  </mat-toolbar>
+  
