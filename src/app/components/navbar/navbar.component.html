@@ -4,12 +4,28 @@
     </a>
     <span>Examportal</span>
     <span class="example-spacer"></span>
-    <a [routerLink]="'/login'" mat-icon-button class="mr10" aria-label="Example icon-button with heart icon">
+    <a 
+      *ngIf="!isLoggedIn"
+    [routerLink]="'/login'" mat-icon-button class="mr10" aria-label="Example icon-button with heart icon">
       login
     </a>
-    <a [routerLink]="'/signup'" mat-icon-button class="ml10 mr10"aria-label="Example icon-button with share icon">
+    <a 
+    *ngIf="!isLoggedIn"
+    [routerLink]="'/signup'" mat-icon-button class="ml10 mr10"aria-label="Example icon-button with share icon">
       register
     </a>
+    <a 
+    *ngIf="isLoggedIn && user"
+     mat-icon-button class="ml10 mr10"aria-label="Example icon-button with share icon">
+      {{user.userName}}
+    </a>
+    <a 
+    (click)="logout()"
+    *ngIf="isLoggedIn"
+     mat-icon-button class="ml10 mr10"aria-label="Example icon-button with share icon">
+      logout
+    </a>
+   
     <button mat-icon-button aria-label="Example icon-button with share icon">
         
     </button>

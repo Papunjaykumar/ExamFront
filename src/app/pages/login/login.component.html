@@ -8,17 +8,18 @@
                             <img src="../../../assets/examportallogo.png" alt="">
                         </div>
                         <h1 class="text-center">Login here !!</h1>
-                        <form>
+                        {{loginData | json}}
+                        <form (ngSubmit)="formSubmit()">
                             <!-- username -->
                             <mat-form-field class="full-width"  appearance="outline">
                                 <mat-label>User Name</mat-label>
-                                <input required  name="userName" matInput placeholder="Enter here">
+                                <input required [(ngModel)]="loginData.userName"  name="userName" matInput placeholder="Enter here">
                                 <mat-hint>Valid username</mat-hint>
                             </mat-form-field>
                             <!-- password -->
                             <mat-form-field class="full-width" appearance="outline">
                                 <mat-label>Password</mat-label>
-                                <input required  name="userName" matInput placeholder="Enter here">
+                                <input type="password" required [(ngModel)]="loginData.password" name="password" matInput placeholder="Enter here">
                             </mat-form-field>
         
                             <div class="container text-center ">
