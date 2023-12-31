@@ -16,13 +16,13 @@
     </a>
     <a 
     *ngIf="isLoggedIn && user"
-     mat-icon-button class="ml10 mr10"aria-label="Example icon-button with share icon">
+     mat-icon-button class="ml10 mr30"aria-label="Example icon-button with share icon">
       {{user.userName}}
     </a>
     <a 
     (click)="logout()"
     *ngIf="isLoggedIn"
-     mat-icon-button class="ml10 mr10"aria-label="Example icon-button with share icon">
+     mat-icon-button class="ml20 mr10"aria-label="Example icon-button with share icon">
       logout
     </a>
    
