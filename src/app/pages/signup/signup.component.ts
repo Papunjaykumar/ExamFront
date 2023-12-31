@@ -45,7 +45,7 @@ export class SignupComponent {
         // error
         console.log(error);
         // alert("Something went wrong")
-        this.snack.open('Some thing went','',{
+        this.snack.open(error.error.message,'',{
           duration:3000,
           horizontalPosition:'right',
           verticalPosition:'top'
