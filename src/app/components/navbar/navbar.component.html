@@ -16,6 +16,7 @@
     </a>
     <a 
     *ngIf="isLoggedIn && user"
+    routerLink="/admin/profile"
      mat-icon-button class="ml10 mr30"aria-label="Example icon-button with share icon">
       {{user.userName}}
     </a>
