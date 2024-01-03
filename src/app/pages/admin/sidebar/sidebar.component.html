@@ -1,20 +1,27 @@
 <mat-card >
     <mat-action-list>
-        <div mat-subheader>Menu</div>
+        <div mat-subheader >Menu</div>
+        <mat-divider></mat-divider>
         <!-- Home -->
         <button mat-list-item routerLink="/admin/"><mat-icon mat-list-icon>home</mat-icon> Home</button>
+        <mat-divider></mat-divider>
         <!-- profile -->
         <button mat-list-item routerLink="/admin/profile"><mat-icon mat-list-icon>account_circle</mat-icon> Profile</button>
+        <mat-divider></mat-divider>
         <!-- category -->
-        <button mat-list-item routerLink="/admin/profile"><mat-icon mat-list-icon>list</mat-icon> Categories</button>
+        <button mat-list-item routerLink="/admin/categories"><mat-icon mat-list-icon>list</mat-icon> Categories</button>
+        <mat-divider></mat-divider>
         <!-- add category -->
-        <button mat-list-item routerLink="/admin/profile"><mat-icon mat-list-icon>add_circle_outline</mat-icon> Add Category</button>
+        <button mat-list-item routerLink="/admin/add-category"><mat-icon mat-list-icon>add_circle_outline</mat-icon> Add Category</button>
+        <mat-divider></mat-divider>
         <!-- quizes -->
         <button mat-list-item routerLink="/admin/profile"><mat-icon mat-list-icon>quiz</mat-icon> Quizes</button>
+        <mat-divider></mat-divider>
         <!-- add quiz -->
         <button mat-list-item routerLink="/admin/profile"><mat-icon mat-list-icon>add_box</mat-icon> Add Quiz</button>
+        <mat-divider></mat-divider>
         <!-- logout -->
         <button mat-list-item routerLink="/admin/profile"><mat-icon mat-list-icon>logout</mat-icon> Logout</button>
-        
+        <mat-divider></mat-divider>
     </mat-action-list>
 </mat-card>
