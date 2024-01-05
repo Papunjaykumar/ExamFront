@@ -29,6 +29,7 @@ import { ViewCategoriesComponent } from './pages/admin/view-categories/view-cate
 import { AddCategoryComponent } from './pages/admin/add-category/add-category.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { UpdateCategoryComponent } from './pages/admin/update-category/update-category.component';
+import { ViewQuizesComponent } from './pages/admin/view-quizes/view-quizes.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { UpdateCategoryComponent } from './pages/admin/update-category/update-ca
     ViewCategoriesComponent,
     AddCategoryComponent,
     UpdateCategoryComponent,
+    ViewQuizesComponent,
     
   ],
   imports: [

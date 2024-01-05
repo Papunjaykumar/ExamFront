@@ -12,6 +12,7 @@ import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
 import { ViewCategoriesComponent } from './pages/admin/view-categories/view-categories.component';
 import { AddCategoryComponent } from './pages/admin/add-category/add-category.component';
 import { UpdateCategoryComponent } from './pages/admin/update-category/update-category.component';
+import { ViewQuizesComponent } from './pages/admin/view-quizes/view-quizes.component';
 
 const routes:Routes=[
   {
@@ -53,6 +54,10 @@ const routes:Routes=[
       {
         path:'update-category',
         component:UpdateCategoryComponent
+      },
+      {
+        path:'quizzes',
+        component:ViewQuizesComponent
       }
 
     ]
