@@ -27,7 +27,8 @@ import { SidebarComponent } from './pages/admin/sidebar/sidebar.component';
 import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
 import { ViewCategoriesComponent } from './pages/admin/view-categories/view-categories.component';
 import { AddCategoryComponent } from './pages/admin/add-category/add-category.component';
-
+import {MatGridListModule} from '@angular/material/grid-list';
+import { UpdateCategoryComponent } from './pages/admin/update-category/update-category.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { AddCategoryComponent } from './pages/admin/add-category/add-category.co
     WelcomeComponent,
     ViewCategoriesComponent,
     AddCategoryComponent,
+    UpdateCategoryComponent,
     
   ],
   imports: [
@@ -60,6 +62,7 @@ import { AddCategoryComponent } from './pages/admin/add-category/add-category.co
     MatToolbarModule,
     MatIconModule,
     MatListModule,
+    MatGridListModule,
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]

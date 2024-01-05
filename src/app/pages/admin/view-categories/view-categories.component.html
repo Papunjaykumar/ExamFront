@@ -1,12 +1,17 @@
 <mat-card>
     <mat-list>
         <div mat-subheader>All Categories</div>
-        <mat-list-item *ngFor="let c of categories">
+         <mat-list-item *ngFor="let c of categories"> 
           <mat-icon matListItemIcon>category</mat-icon>
           <div matListItemTitle>{{c.title}}</div>
-          <div matListItemLine>{{c.description}}</div>
-          <hr class="divider">
+          <div matListItemLine  >
+            {{c.description}}
+            <button mat-raised-button color="primary" (click)="updateButtonClicked($event,c)" class="ml40" >Update</button>
+            <button mat-raised-button color="accent" (click)="DeleteButtonClick($event,c)" class="ml10" >Delete</button>
+          </div>
+          
         </mat-list-item>
+        
         
         <div class="bootstrap-wrapper">
           <div class="container text-center mt20">

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CategoryService } from 'src/app/services/category.service';
 import Swal from 'sweetalert2';
 
@@ -9,7 +10,7 @@ import Swal from 'sweetalert2';
 })
 export class ViewCategoriesComponent implements OnInit {
 
-  constructor(private _category:CategoryService){}
+  constructor(private _category:CategoryService,private _route:Router){}
   ngOnInit(): void {
     this._category.categories().subscribe(
       (data:any)=>{
@@ -25,4 +26,44 @@ export class ViewCategoriesComponent implements OnInit {
     )
   }
   categories=null;
+
+  DeleteButtonClick(event:any,category:any){
+    console.log("Delete button clicked");
+    console.log(category)
+    // call the delete endpoint
+    this._category.deleteCategory(category).subscribe(
+      (data:any)=>{
+        // success
+        Swal.fire("Successfully Deleted !!","Category got deleted...","success");
+        // after deleting category updating the categories
+        this._category.categories().subscribe(
+          (data:any)=>{
+            // success
+            this.categories=data;
+            console.log(this.categories);
+            
+          },
+          (error)=>{
+            // error
+            Swal.fire("Error !!","error in loading data","error");
+          }
+        )
+      },
+      (error:any)=>{
+        // error
+        Swal.fire("Error !!","error in deleting data","error");
+      }
+    )
+    
+  }
+
+  updateButtonClicked(event:any,category:any){
+    // setting the category to be updated to the local storage
+    localStorage.setItem("updateCategory",JSON.stringify(category));
+    console.log(category);
+    // navigating to the update-category
+    this._route.navigate(["/admin/update-category"])
+
+
+  }
 }
