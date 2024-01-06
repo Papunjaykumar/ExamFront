@@ -13,6 +13,7 @@
         <button class="ml20" mat-stroked-button color="primary">Questions: {{q.numberOfquestion}}</button>
         <button class="ml20" mat-flat-button color="primary">update</button>
         <button class="ml20" mat-flat-button color="primary">Attempts</button>
+        <button class="ml20" mat-flat-button color="warn" (click)="deleteQuiz(q.qid)">Delete</button>
     </mat-card-actions>
 </mat-card>
 <div class="container text-center mt20">

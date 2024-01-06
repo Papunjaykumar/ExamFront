@@ -9,7 +9,7 @@ import Swal from 'sweetalert2';
 })
 export class ViewQuizesComponent implements OnInit {
 
-  quizzes=null;
+  quizzes:any;
 
   constructor(private _quiz:QuizService){}
   ngOnInit(): void {
@@ -25,6 +25,34 @@ export class ViewQuizesComponent implements OnInit {
         
       }
     )
+  }
+
+  // delete quiz
+  deleteQuiz(qid:any){
+    Swal.fire({
+      icon:'info',
+      title:"Are you sure ?",
+      confirmButtonText:'Delete',
+      showCancelButton:true
+    }).then((result:any)=>{
+      if(result.isConfirmed){
+        // delete
+        this._quiz.deleteQuiz(qid).subscribe(
+          (data:any)=>{
+            
+            this.quizzes=this.quizzes.filter((quiz:any)=>quiz.qid!=qid);
+            
+            Swal.fire("Successfully Done !!","Quiz Deleted...","success");
+          },
+          (error)=>{
+            console.log(error);
+            Swal.fire("Error !!","Error in deleting quiz","error");
+            
+          }
+        )
+      }
+    })
+    
   }
 
 }
