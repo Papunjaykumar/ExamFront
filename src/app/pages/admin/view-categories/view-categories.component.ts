@@ -25,35 +25,33 @@ export class ViewCategoriesComponent implements OnInit {
       }
     )
   }
-  categories=null;
+  categories:any;
 
   DeleteButtonClick(event:any,category:any){
     console.log("Delete button clicked");
     console.log(category)
-    // call the delete endpoint
-    this._category.deleteCategory(category).subscribe(
-      (data:any)=>{
-        // success
-        Swal.fire("Successfully Deleted !!","Category got deleted...","success");
-        // after deleting category updating the categories
-        this._category.categories().subscribe(
+    Swal.fire({
+      icon:'warning',
+      title:'Are you sure ?',
+      confirmButtonText:'Delete',
+      showCancelButton:true
+    }).then((result)=>{
+      if(result.isConfirmed){
+        this._category.deleteCategory(category).subscribe(
           (data:any)=>{
             // success
-            this.categories=data;
-            console.log(this.categories);
-            
+            Swal.fire("Successfully Deleted !!","Category got deleted...","success");
+            // after deleting category updating the categories
+            this.categories=this.categories.filter((c:any)=>c.cid!=category.cid);
           },
-          (error)=>{
+          (error:any)=>{
             // error
-            Swal.fire("Error !!","error in loading data","error");
+            Swal.fire("Error !!","error in deleting data","error");
           }
         )
-      },
-      (error:any)=>{
-        // error
-        Swal.fire("Error !!","error in deleting data","error");
       }
-    )
+    })
+    
     
   }
 
