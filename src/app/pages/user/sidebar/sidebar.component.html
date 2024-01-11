@@ -1,0 +1,17 @@
+<mat-card >
+    <mat-action-list>
+        <div mat-subheader >Availabe Categories</div>
+        <!-- <mat-divider></mat-divider> -->
+        
+        <button mat-list-item [routerLink]="'/user-dashboard/0'">
+            <mat-icon mat-list-icon>quiz</mat-icon> All Quizzes
+        </button>
+        <!-- profile -->
+        <button [routerLink]="'/user-dashboard/'+c.cid" mat-list-item *ngFor="let c of categories">
+            <mat-icon mat-list-icon>quiz</mat-icon> {{c.title}}
+        </button>
+        
+
+       
+    </mat-action-list>
+</mat-card>
