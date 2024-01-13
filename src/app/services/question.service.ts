@@ -22,4 +22,9 @@ public deleteQuestion(quesId:any){
   return this._http.delete(`${baseUrl}/question/${quesId}`)
 }
 
+// getting questions of quiz for test
+public getQuestionsOfQuizForTest(qid:any){
+  return this._http.get(`${baseUrl}/question/quiz/${qid}`)
+} 
+
 }

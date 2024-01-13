@@ -17,7 +17,7 @@
                     </mat-card-content>
                     <mat-card-actions>
                         <button mat-button color="primary">View</button>
-                        <button mat-button color="accent" class="ml20">Start</button>
+                        <button [routerLink]="'/user-dashboard/instructions/'+q.qid" mat-button color="accent" class="ml20">Start</button>
                         <button mat-button color="accent" class="ml20">Questions {{q.numberOfquestion}}</button>
                         <button mat-button color="accent" class="ml20">Max Marks {{q.maxMarks}}</button>
                     </mat-card-actions>

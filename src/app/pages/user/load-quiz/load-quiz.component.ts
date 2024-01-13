@@ -38,6 +38,8 @@ export class LoadQuizComponent implements OnInit {
           this._quiz.getActiveQuizzesOfCategory(this.catId).subscribe(
             (data:any)=>{
               this.quizzes=data;
+              console.log(this.quizzes);
+              
             },
             (error:any)=>{
               console.log(error);
