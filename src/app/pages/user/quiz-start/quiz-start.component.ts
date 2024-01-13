@@ -16,6 +16,7 @@ export class QuizStartComponent implements OnInit{
   correctAnswers=0;
   attemted=0;
   isSubmit=false;
+  timer:any;
   constructor(
     private locationSt:LocationStrategy,
     private _route:ActivatedRoute,
@@ -36,10 +37,14 @@ export class QuizStartComponent implements OnInit{
     this._question.getQuestionsOfQuizForTest(this.qId).subscribe(
       (data:any)=>{
         this.questions=data;
+
+        this.timer=this.questions.length*2*60;
+
         this.questions.forEach((q:any) => {
           q['givenAnswer']='';
         });
         console.log(this.questions);
+        this.startTime();
         
       },
       (error:any)=>{
@@ -68,7 +73,35 @@ export class QuizStartComponent implements OnInit{
       if(result.isConfirmed){
         // calculations
         // console.log(this.questions);
-        this.isSubmit=true;
+        this.evalQuiz();
+                
+      }
+
+      
+    })
+  }
+
+  startTime(){
+    let t=window.setInterval(()=>{
+      // code
+      if(this.timer<=0){
+        this.evalQuiz();
+        clearInterval(t);
+      }else{
+        this.timer--;
+      }
+    },1000)
+  }
+
+  getFormattedTime(){
+    let mm=Math.floor(this.timer/60);
+    let ss=this.timer-mm*60;
+
+    return `${mm} min : ${ss} sec`
+  }
+
+  evalQuiz(){
+    this.isSubmit=true;
         this.questions.forEach((q:any)=>{
           if(q.givenAnswer==q.ans){
             // this.attemted++;
@@ -79,18 +112,6 @@ export class QuizStartComponent implements OnInit{
           if(q.givenAnswer.trim()!=''){
             this.attemted++;
           }
-        })
-
-        
-        
-        
-        
-        
-
-        
-      }
-
-      
-    })
+        });
   }
 }
