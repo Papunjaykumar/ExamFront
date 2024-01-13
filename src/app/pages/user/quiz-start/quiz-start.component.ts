@@ -40,9 +40,7 @@ export class QuizStartComponent implements OnInit{
 
         this.timer=this.questions.length*2*60;
 
-        this.questions.forEach((q:any) => {
-          q['givenAnswer']='';
-        });
+        
         console.log(this.questions);
         this.startTime();
         
@@ -101,17 +99,34 @@ export class QuizStartComponent implements OnInit{
   }
 
   evalQuiz(){
+    
+    // call to server to check questions
+    this._question.evalQuiz(this.questions).subscribe(
+      (data:any)=>{
+        // success
+        console.log(data);
+        this.marksGot=data.marksGot;
+        this.attemted=data.attempted;
+        this.correctAnswers=data.correctAnswer
+        
+      },
+      (error:any)=>{
+        console.log(error);
+        
+      }
+    )
+
     this.isSubmit=true;
-        this.questions.forEach((q:any)=>{
-          if(q.givenAnswer==q.ans){
-            // this.attemted++;
-            this.correctAnswers++;
-            let marksSingle=(q.quiz.maxMarks)/this.questions.length;
-            this.marksGot+=marksSingle;
-          }
-          if(q.givenAnswer.trim()!=''){
-            this.attemted++;
-          }
-        });
+    //     this.questions.forEach((q:any)=>{
+    //       if(q.givenAnswer==q.ans){
+    //         // this.attemted++;
+    //         this.correctAnswers++;
+    //         let marksSingle=(q.quiz.maxMarks)/this.questions.length;
+    //         this.marksGot+=marksSingle;
+    //       }
+    //       if(q.givenAnswer.trim()!=''){
+    //         this.attemted++;
+    //       }
+    //     });
   }
 }
