@@ -105,7 +105,7 @@ export class QuizStartComponent implements OnInit{
       (data:any)=>{
         // success
         console.log(data);
-        this.marksGot=data.marksGot;
+        this.marksGot=(data.marksGot).toFixed(2);
         this.attemted=data.attempted;
         this.correctAnswers=data.correctAnswer
         
@@ -128,5 +128,9 @@ export class QuizStartComponent implements OnInit{
     //         this.attemted++;
     //       }
     //     });
+  }
+
+  print(){
+    window.print();
   }
 }

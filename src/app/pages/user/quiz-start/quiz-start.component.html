@@ -3,7 +3,18 @@
         <div class="row">
             <div class="col-md-2">
                 <!-- instructions -->
-                <h3>Instructions</h3>
+                
+                <mat-card style="margin-top:50px;">
+                    <h3 class="ml10"><b>Instructions</b></h3>
+                    <mat-card-content>
+                        <ul>
+                            <li>Please donot switch the tab.</li>
+                            <li>Please donot minimize the window.</li>
+                            <li>Please donot refresh the page otherwise you will get the new questions.</li>
+                        
+                        </ul>
+                    </mat-card-content>
+                </mat-card>
             </div>
             <div class="col-md-8">
                 <!-- questions -->
@@ -100,7 +111,7 @@
                 </mat-card-content>
                 <mat-card-actions class="text-center">  
                     <div class="container text-center">
-                        <button mat-raised-button color="primary">Print</button>
+                        <button (click)="print()" mat-raised-button color="primary">Print</button>
                         <button class="ml10" mat-raised-button color="accent" [routerLink]="'/user-dashboard/0'">Home</button>
                     </div>
                 </mat-card-actions>
