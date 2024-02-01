@@ -9,13 +9,14 @@ import { LoginService } from 'src/app/services/login.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-
+  
   constructor(private snack:MatSnackBar,private login:LoginService,private router:Router){}
-
+  fieldTextType: boolean=false;
   loginData={
     userName:"",
     password:""
   }
+  
 
   formSubmit(){
     console.log(this.loginData);
@@ -95,5 +96,9 @@ export class LoginComponent {
         
       }
     )
+  }
+
+  showPassword(){
+    this.fieldTextType = !this.fieldTextType;
   }
 }
