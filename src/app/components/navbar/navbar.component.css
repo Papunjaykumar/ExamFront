@@ -1,3 +1,10 @@
 .example-spacer {
-    flex: 1 1 auto;
+    flex: 1 1 auto ;
   }
+.test{
+  display: flex;
+  padding:0 30px 0 0;
+}
+.test a{
+  margin-left:30px !important;
+}

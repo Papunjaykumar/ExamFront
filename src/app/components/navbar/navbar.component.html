@@ -1,40 +1,34 @@
-<mat-toolbar color="primary">
-    <a routerLink="/" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-      <mat-icon>menu_book</mat-icon>
-    </a>
-    <span>Examportal</span>
-    <span class="example-spacer"></span>
-    <a 
-      *ngIf="!isLoggedIn"
-    [routerLink]="'/login'" mat-icon-button class="mr10" aria-label="Example icon-button with heart icon">
+<mat-toolbar color="primary" class="navbar">
+  <a routerLink="/" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu_book</mat-icon>
+  </a>
+  <span>Examportal</span>
+  <span class="example-spacer"></span>
+  <div class="test">
+
+    <a *ngIf="!isLoggedIn" [routerLink]="'/login'" mat-icon-button class="mr10"
+      aria-label="Example icon-button with heart icon">
       login
     </a>
-    <a 
-    *ngIf="!isLoggedIn"
-    [routerLink]="'/signup'" mat-icon-button class="ml10 mr10"aria-label="Example icon-button with share icon">
+    <a *ngIf="!isLoggedIn" [routerLink]="'/signup'" mat-icon-button class="ml10 mr10"
+      aria-label="Example icon-button with share icon">
       register
     </a>
-    <a 
-    *ngIf="isLoggedIn && user.authorities[0].authority=='ADMIN'"
-    routerLink="/admin/profile"
-     mat-icon-button class="ml10 mr30"aria-label="Example icon-button with share icon">
+    <a *ngIf="isLoggedIn && user.authorities[0].authority=='ADMIN'" routerLink="/admin/profile" mat-icon-button
+      class="ml10 mr30" aria-label="Example icon-button with share icon">
       {{user.userName}}
     </a>
-    <a 
-    *ngIf="isLoggedIn && user.authorities[0].authority=='NORMAL'"
-    routerLink="/user-dashboard/profile"
-     mat-icon-button class="ml10 mr30"aria-label="Example icon-button with share icon">
+    <a *ngIf="isLoggedIn && user.authorities[0].authority=='NORMAL'" routerLink="/user-dashboard/profile"
+      mat-icon-button class="ml10 mr30" aria-label="Example icon-button with share icon">
       {{user.userName}}
     </a>
-    <a 
-    (click)="logout()"
-    *ngIf="isLoggedIn"
-     mat-icon-button class="ml20 mr10"aria-label="Example icon-button with share icon">
+    <a (click)="logout()" *ngIf="isLoggedIn" mat-icon-button class="ml20 mr10"
+      aria-label="Example icon-button with share icon">
       logout
     </a>
-   
-    <button mat-icon-button aria-label="Example icon-button with share icon">
+  </div>
+
+  <!-- <button mat-icon-button aria-label="Example icon-button with share icon">
         
-    </button>
-  </mat-toolbar>
-  
+    </button> -->
+</mat-toolbar>
