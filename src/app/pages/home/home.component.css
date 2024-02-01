@@ -1,0 +1,13 @@
+.home-image{
+    max-height: 100%;
+    margin: auto;
+    
+}
+
+h1{
+    
+    line-height: 4rem;
+    font-weight: bolder;
+    background-color: rgba(47, 201, 212, 0.948);
+    color:white;
+}

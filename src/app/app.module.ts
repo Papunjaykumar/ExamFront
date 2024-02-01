@@ -43,6 +43,8 @@ import { InstructionsComponent } from './pages/user/instructions/instructions.co
 import { QuizStartComponent } from './pages/user/quiz-start/quiz-start.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from "ngx-ui-loader";
+import {MatSidenavModule} from '@angular/material/sidenav';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -94,7 +96,10 @@ import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from "ngx-ui-loader";
     NgxUiLoaderHttpModule.forRoot({
       showForeground:true,
       
-    })
+    }),
+    MatSidenavModule,
+    
+
 
   ],
   providers: [authInterceptorProviders],

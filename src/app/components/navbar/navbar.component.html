@@ -15,8 +15,14 @@
       register
     </a>
     <a 
-    *ngIf="isLoggedIn && user"
+    *ngIf="isLoggedIn && user.authorities[0].authority=='ADMIN'"
     routerLink="/admin/profile"
+     mat-icon-button class="ml10 mr30"aria-label="Example icon-button with share icon">
+      {{user.userName}}
+    </a>
+    <a 
+    *ngIf="isLoggedIn && user.authorities[0].authority=='NORMAL'"
+    routerLink="/user-dashboard/profile"
      mat-icon-button class="ml10 mr30"aria-label="Example icon-button with share icon">
       {{user.userName}}
     </a>

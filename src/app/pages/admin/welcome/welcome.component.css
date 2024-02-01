@@ -1,0 +1,18 @@
+.admin-panel{
+    background: url(../../../../assets/examportallogo.png);
+    background-repeat: no-repeat;
+    opacity: 0.8;
+    background-position: center;
+    /* background-size: cover; */
+}
+.bootstrap-wrapper{
+    height:100%;
+    width:100%;
+}
+h1{
+    
+    line-height: 4rem;
+    font-weight: bolder;
+    background-color: rgba(47, 201, 212, 0.948);
+    color:white;
+}

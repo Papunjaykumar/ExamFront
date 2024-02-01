@@ -92,9 +92,14 @@ const routes:Routes=[
     canActivate:[normalGuard],
     children:[
       {
+        path:'profile',
+        component:ProfileComponent,
+      },
+      {
         path:':catId',
         component:LoadQuizComponent
       },
+      
       {
         path:'instructions/:qid',
         component:InstructionsComponent,
